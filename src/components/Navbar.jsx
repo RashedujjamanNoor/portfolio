@@ -6,14 +6,14 @@ import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <div className="py-4 flex justify-between items-center flex-wrap mx-2">
+    <div className="py-4 flex justify-between items-center flex-wrap mx-2 lg:mx-10 border-b-green-600 border-b">
       <div className="flex items-center gap-2">
-        <SiCodingninjas className="text-3xl text-green-600" />
-        <p className="text-3xl font-bold">Noor.</p>
+        <SiCodingninjas className="text-3xl lg:text-5xl text-green-600" />
+        <p className="text-3xl lg:text-5xl font-bold">Noor.</p>
       </div>
 
       <div className="hidden md:block">
-        <div className="flex justify-center items-center gap-8 text-gray-400 font-medium">
+        <div className="flex justify-center items-center gap-8 text-gray-400 lg:text-xl font-medium">
           <a href="#">About Me</a>
           <a href="#">Skill</a>
           <a href="#">Projects</a>
@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="hidden md:flex justify-center items-center">
-        <button className="bg-btncolor btn">Hire me</button>
+        <button className="bg-btncolor btn lg:py-3 lg:px-6">Hire me</button>
       </div>
 
       <div className="md:hidden" onClick={() => setMenu(!menu)}>
