@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import About from "../components/About";
 import MySkills from "../components/MySkills";
+import Projects from "../components/Projects";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Header />
       <About />
       <MySkills />
+      <Projects />
     </div>
   );
 };

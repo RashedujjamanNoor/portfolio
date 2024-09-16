@@ -7,10 +7,11 @@ import { FaReact } from "react-icons/fa6";
 import { FaNodeJs } from "react-icons/fa6";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
+import { FaGithub } from "react-icons/fa";
 
 const MySkills = () => {
   return (
-    <div className="py-14">
+    <div id="skills" className="py-14">
       <h1 className="text-center mb-7 text-2xl font-bold md:text-3xl lg:text-4xl 2xl:text-5xl">
         My Skills
       </h1>
@@ -50,6 +51,10 @@ const MySkills = () => {
           </li>
           <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
             <SiMongodb />
+            <p>MondoDB</p>
+          </li>
+          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
+            <FaGithub />
             <p>MondoDB</p>
           </li>
         </ul>

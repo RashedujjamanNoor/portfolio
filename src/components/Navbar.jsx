@@ -14,9 +14,9 @@ const Navbar = () => {
 
       <div className="hidden md:block">
         <div className="flex justify-center items-center gap-8 text-gray-400 lg:text-xl font-medium">
-          <a href="#">About Me</a>
-          <a href="#">Skill</a>
-          <a href="#">Projects</a>
+          <a href="#about">About Me</a>
+          <a href="#skills">Skill</a>
+          <a href="#projects">Projects</a>
           <a href="#">Contact</a>
         </div>
       </div>

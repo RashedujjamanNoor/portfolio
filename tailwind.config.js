@@ -7,6 +7,9 @@ export default {
         primary: "#070d06",
         btncolor: "#52c234",
       },
+      gridTemplateColumns: {
+        auto: "repeat(auto-fill,minmax(400px,1fr))",
+      },
     },
   },
   plugins: [],
