@@ -17,7 +17,7 @@ const Navbar = () => {
           <a href="#">About Me</a>
           <a href="#">Skill</a>
           <a href="#">Projects</a>
-          <a href="#">Constact</a>
+          <a href="#">Contact</a>
         </div>
       </div>
       <div className="hidden md:flex justify-center items-center">

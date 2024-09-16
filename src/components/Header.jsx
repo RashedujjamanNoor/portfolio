@@ -15,7 +15,7 @@ const Header = () => {
         <h1 className="text-3xl font-bold mb-4 2xl:text-5xl">
           A <span>Fullstack</span> Web Developer
         </h1>
-        <p className="text-justify text-gray-400 font-medium leading-5">
+        <p className="text-justify text-gray-400 font-medium leading-5 ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A
           consequuntur beatae placeat assumenda eveniet repellendus aspernatur
           exercitationem maiores sit dolor? Molestias iste quidem quis
