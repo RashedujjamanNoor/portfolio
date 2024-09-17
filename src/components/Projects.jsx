@@ -37,8 +37,10 @@ const Projects = () => {
   ];
   return (
     <div id="projects">
-      <h1 className="text-center mb-5 text-2xl font-bold md:text-3xl lg:text-4xl 2xl:text-5xl">
-        Projects
+      <h1 className="text-center mb-5 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200 ">
+          Projects
+        </span>
       </h1>
       <hr className="mb-6 border-green-600" />
       <div className="grid grid-cols-auto gap-8 justify-center justify-items-center">
@@ -62,11 +64,11 @@ const Projects = () => {
               ))}
             </div>
             <div className="flex justify-start items-center mt-4 gap-3">
-              <button className="btn bg-btncolor">Live</button>
-              <button className="btn flex justify-center items-center gap-2 border text-btncolor">
+              <a className="btn bg-btncolor">Live</a>
+              <a className="btn flex justify-center items-center gap-2 border text-btncolor">
                 <FaGithub className="" />
                 <p>Code</p>
-              </button>
+              </a>
             </div>
           </div>
         ))}

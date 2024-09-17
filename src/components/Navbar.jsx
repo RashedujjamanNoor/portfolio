@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
   return (
-    <div className="py-4 flex justify-between items-center flex-wrap mx-2 lg:mx-10 border-b-green-600 border-b">
+    <div className="py-4 flex justify-between items-center flex-wrap px-2 lg:mx-10 border-b-green-600 border-b sticky top-0 mb-1 bg-primary">
       <div className="flex items-center gap-2">
         <SiCodingninjas className="text-3xl lg:text-5xl text-green-600" />
         <p className="text-3xl lg:text-5xl font-bold">Noor.</p>

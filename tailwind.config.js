@@ -8,7 +8,7 @@ export default {
         btncolor: "#52c234",
       },
       gridTemplateColumns: {
-        auto: "repeat(auto-fill,minmax(400px,1fr))",
+        auto: "repeat(auto-fill,minmax(380px,1fr))",
       },
     },
   },
