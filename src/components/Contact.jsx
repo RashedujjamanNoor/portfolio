@@ -14,7 +14,7 @@ const Contact = () => {
       <hr className="border-green-600" />
 
       <div className="md:flex justify-between  ">
-        <div className="flex flex-col justify-center items-center w-full mr-4">
+        <div className=" flex flex-col justify-between items-center  w-full mr-4">
           <div className="bg-green-950 flex flex-col justify-center items-center w-full my-4 py-5 px-4 font-medium gap-1 rounded-lg">
             <p className="flex flex-col justify-center items-center text-gray-300">
               <span>
