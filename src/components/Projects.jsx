@@ -36,7 +36,7 @@ const Projects = () => {
     },
   ];
   return (
-    <div id="projects">
+    <div id="projects" className="pt-20">
       <h1 className="text-center mb-5 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200 ">
           Projects

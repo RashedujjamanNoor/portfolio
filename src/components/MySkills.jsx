@@ -11,7 +11,7 @@ import { FaGithub } from "react-icons/fa";
 
 const MySkills = () => {
   return (
-    <div id="skills" className="py-14">
+    <div id="skills" className="pt-20">
       <h1 className="text-center mb-7 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200">
           My Skills

@@ -5,7 +5,7 @@ import { MdLocationPin } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div className="py-5 ">
+    <div id="contact" className="pt-20 ">
       <h1 className="font-bold text-center text-2xl mb-3  md:text-3xl lg:text-4xl 2xl:text-5xl">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200">
           Contact
@@ -14,7 +14,7 @@ const Contact = () => {
       <hr className="border-green-600" />
 
       <div className="md:flex justify-between  ">
-        <div className=" flex flex-col justify-between items-center  w-full mr-4">
+        <div className=" flex flex-col justify-between items-center w-full mr-4">
           <div className="bg-green-950 flex flex-col justify-center items-center w-full my-4 py-5 px-4 font-medium gap-1 rounded-lg">
             <p className="flex flex-col justify-center items-center text-gray-300">
               <span>

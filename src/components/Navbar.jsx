@@ -17,7 +17,7 @@ const Navbar = () => {
           <a href="#about">About Me</a>
           <a href="#skills">Skill</a>
           <a href="#projects">Projects</a>
-          <a href="#">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
       <div className="hidden md:flex justify-center items-center">
@@ -30,6 +30,28 @@ const Navbar = () => {
         ) : (
           <RiMenu3Line className="text-green-600 text-3xl" />
         )}
+      </div>
+      <div
+        className={`${
+          menu ? "fixed w-full" : "hidden"
+        } md:hidden overflow-hidden z-30 flex flex-col items-center gap-2 pt-3 px-16 bg-green-900 top-[69px] bottom-0 right-0 transition-all duration-500 text-gray-300 font-medium`}
+      >
+        <div className="flex items-center gap-2">
+          <SiCodingninjas className="text-3xl lg:text-5xl text-green-600" />
+          <p className="text-3xl lg:text-5xl font-bold">Noor.</p>
+        </div>
+        <a onClick={() => setMenu(!menu)} href="#about">
+          About Me
+        </a>
+        <a onClick={() => setMenu(!menu)} href="#skills">
+          Skill
+        </a>
+        <a onClick={() => setMenu(!menu)} href="#projects">
+          Projects
+        </a>
+        <a onClick={() => setMenu(!menu)} href="#contact">
+          Contact
+        </a>
       </div>
     </div>
   );
