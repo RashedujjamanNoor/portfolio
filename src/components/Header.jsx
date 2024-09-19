@@ -1,3 +1,5 @@
+import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
+
 const Header = () => {
   return (
     <div className="md:flex justify-center items-center gap-6 2xl:mx-36">
@@ -26,8 +28,32 @@ const Header = () => {
           consectetur facere atque recusandae laboriosam voluptatibus.
         </p>
         <div className="flex  justify-start items-center gap-4 py-3">
-          <button className="btn bg-btncolor">Learn More</button>
-          <button className="btn bg-white/20">Get Started</button>
+          <button className="btn bg-btncolor">
+            <a href="#about">Learn More</a>
+          </button>
+          <button className="btn bg-white/20">
+            <a href="#contact">Get Started</a>
+          </button>
+        </div>
+        <div className="flex items-center gap-4 mt-4">
+          <a
+            className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
+            href="https://www.facebook.com/rashedkhan.rk.96"
+          >
+            <FaFacebookF className="text-xl" />
+          </a>
+          <a
+            className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
+            href="https://www.linkedin.com/in/md-rashedujjaman-noor-006773262/"
+          >
+            <FaLinkedinIn className="text-xl" />
+          </a>
+          <a
+            className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
+            href="https://github.com/RashedujjamanNoor?tab=repositories"
+          >
+            <FaGithub className="text-xl" />
+          </a>
         </div>
       </div>
     </div>
