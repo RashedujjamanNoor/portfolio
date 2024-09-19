@@ -1,9 +1,23 @@
-import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdMarkEmailRead } from "react-icons/md";
 import { MdLocationPin } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mnnakjdl");
+  if (state.succeeded) {
+    return (
+      <>
+        {toast("Your Message Send Successfully", { type: "success" })}{" "}
+        <p className="text-3xl text-center font-bold text-green-500">
+          Thanks For Contact!
+        </p>
+      </>
+    );
+  }
+  console.log(state);
+
   return (
     <div id="contact" className="pt-20 ">
       <h1 className="font-bold text-center text-2xl mb-3  md:text-3xl lg:text-4xl 2xl:text-5xl">
@@ -45,50 +59,87 @@ const Contact = () => {
         </div>
         <div className="max-w- flex flex-col  items-center bg-green-950 rounded-lg mt-4 w-full">
           <h1 className="my-3 text-2xl font-medium">Contact Me</h1>
-          <form className="px-6 w-full">
+          <form className="px-6 w-full" onSubmit={handleSubmit}>
             <div className="flex flex-col justify-center items-center gap-3 mb-3 text-slate-300 font-medium">
               <div className="flex gap-2 w-full">
                 <div className="w-full">
-                  <p>First Name</p>
+                  <label htmlFor="fname">First Name</label>
                   <input
+                    id="fname"
                     type="text"
+                    name="fname"
                     className="w-full rounded mt-1 px-2 py-2 bg-primary text-sm font-medium"
+                  />
+                  <ValidationError
+                    prefix="FName"
+                    field="fname"
+                    errors={state.errors}
                   />
                 </div>
                 <div className="w-full">
-                  <p>Last Name</p>
+                  <label htmlFor="lname">Last Name</label>
                   <input
+                    id="lname"
                     type="text"
+                    name="lname"
                     className="w-full rounded mt-1 px-2 py-2 bg-primary text-sm font-medium"
+                  />
+                  <ValidationError
+                    prefix="LName"
+                    field="lname"
+                    errors={state.errors}
                   />
                 </div>
               </div>
               <div className="flex gap-2 w-full ">
                 <div className="w-full">
-                  <p>Email</p>
+                  <label htmlFor="email">Email</label>
                   <input
+                    id="email"
                     type="email"
+                    name="email"
                     className="w-full rounded mt-1 px-2 py-2 bg-primary text-sm font-medium"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
                   />
                 </div>
                 <div className="w-full">
-                  <p>Phone</p>
+                  <label htmlFor="phone">Phone</label>
                   <input
+                    id="number"
                     type="text"
+                    name="number"
                     className="w-full rounded mt-1 px-2 py-2 bg-primary text-sm font-medium"
+                  />
+                  <ValidationError
+                    prefix="Number"
+                    field="number"
+                    errors={state.errors}
                   />
                 </div>
               </div>
               <div className="w-full">
-                <p>Message</p>
+                <label htmlFor="message">Message</label>
                 <textarea
-                  name=""
-                  id=""
+                  id="message"
+                  name="message"
                   className="w-full h-24 rounded mt-1 px-2 py-2 bg-primary text-sm font-medium"
-                ></textarea>
+                />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                />
               </div>
             </div>
-            <button type="submit" className="btn bg-green-600 mb-4 w-40">
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="btn bg-green-600 mb-4 w-40"
+            >
               Send
             </button>
           </form>

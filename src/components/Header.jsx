@@ -2,12 +2,12 @@ import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <div className="md:flex justify-center items-center gap-6 2xl:mx-36">
-      <div className="flex flex-1 justify-center mt-4 md:w-1/2 md:order-2 items-end flex-wrap">
+    <div className="md:flex justify-center items-center gap-6 2xl:mx-36 ">
+      <div className="flex flex-1 justify-center mt-4 md:w-1/2 md:order-2 items-end flex-wrap ">
         <img
           src="aaaaa.png"
           alt=""
-          className="min-w-40 min-h-40 max-w-96 max-h-96 rounded"
+          className="min-w-40 min-h-40 max-w-96 max-h-96 bottom-1 right-0 top-1 rounded "
         />
       </div>
       <div className="md:w-4/5 lg:w-1/3">
