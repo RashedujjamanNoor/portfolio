@@ -57,7 +57,7 @@ const MySkills = () => {
           </li>
           <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
             <FaGithub />
-            <p>MondoDB</p>
+            <p>Github</p>
           </li>
         </ul>
       </div>

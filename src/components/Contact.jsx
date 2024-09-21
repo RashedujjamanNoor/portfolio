@@ -16,7 +16,6 @@ const Contact = () => {
       </>
     );
   }
-  console.log(state);
 
   return (
     <div id="contact" className="pt-20 ">

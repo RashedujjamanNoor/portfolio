@@ -17,6 +17,7 @@ const Navbar = () => {
           <a href="#about">About Me</a>
           <a href="#skills">Skill</a>
           <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -50,6 +51,9 @@ const Navbar = () => {
         </a>
         <a onClick={() => setMenu(!menu)} href="#projects">
           Projects
+        </a>
+        <a onClick={() => setMenu(!menu)} href="#education">
+          Education
         </a>
         <a onClick={() => setMenu(!menu)} href="#contact">
           Contact

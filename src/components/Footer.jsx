@@ -56,6 +56,12 @@ const Footer = () => {
             </a>
             <a
               className="hover:text-green-500 transition-all duration-300"
+              href="#education"
+            >
+              Education
+            </a>
+            <a
+              className="hover:text-green-500 transition-all duration-300"
               href="#contact"
             >
               Contact
