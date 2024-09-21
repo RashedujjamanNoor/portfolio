@@ -5,10 +5,7 @@ const About = () => {
         About
       </h1>
       <p className="text-center text-gray-400 font-medium w-4/5 xl:w-3/5 2xl:text-2xl md:text-lg lg:text-xl">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore iste
-        eveniet consectetur fugiat vero. Praesentium, saepe! Maiores architecto
-        quod doloremque, optio expedita illo, non voluptatibus perferendis
-        quaerat asperiores corporis error.
+      I’m a software engineer specializing in full-stack development using the MERN stack (MongoDB, Express.js, React, Node.js). I create dynamic web applications with a focus on code quality and user experience. I thrive in collaborative environments and enjoy solving complex problems. Always eager to learn, I also contribute to open-source projects and engage with the developer community.
       </p>
     </div>
   );

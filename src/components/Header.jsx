@@ -22,10 +22,7 @@ const Header = () => {
           Web Developer
         </h1>
         <p className="text-justify text-gray-400 font-medium leading-5 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-          consequuntur beatae placeat assumenda eveniet repellendus aspernatur
-          exercitationem maiores sit dolor? Molestias iste quidem quis
-          consectetur facere atque recusandae laboriosam voluptatibus.
+        I’m a software engineer specializing in full-stack development using the MERN stack (MongoDB, Express.js, React, Node.js). I create dynamic web applications with a focus on code quality and user experience. I thrive in collaborative environments and enjoy solving complex problems. Always eager to learn, I also contribute to open-source projects and engage with the developer community.
         </p>
         <div className="flex  justify-start items-center gap-4 py-3">
           <button className="btn bg-btncolor">
