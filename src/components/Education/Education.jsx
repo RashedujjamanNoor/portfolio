@@ -45,8 +45,7 @@ const Education = () => {
           <div className="w-full h-full bg-green-950 rounded-md p-3">
             <div className="flex justify-between items-center text-wrap gap-2 mb-3">
               <h1 className="w-4/5">
-                Bangladesh Army University of Science and Technology (BAUST),
-                Saidpur
+              Adarsha College, Dinajpur
               </h1>
               <h1>2017-2019</h1>
             </div>
@@ -59,8 +58,7 @@ const Education = () => {
           <div className="w-full h-full bg-green-950 rounded-md p-3">
             <div className="flex justify-between items-center text-wrap gap-2 mb-3">
               <h1 className="w-4/5">
-                Bangladesh Army University of Science and Technology (BAUST),
-                Saidpur
+              Collectorate Public School and College, Nilphamari
               </h1>
               <h1>2015-2017</h1>
             </div>
