@@ -9,14 +9,15 @@ const Projects = () => {
         "Enhance your online shopping experience with our E-Commerce Application UI design project. Seamlessly blending aesthetics with functionality, our intuitive interface offers easy navigation, personalized recommendations, and secure transactions. Elevate your digital storefront and captivate customers with a visually stunning design tailored to your brand",
 
       stack: ["React", "Express", "Node", "MongoDB"],
+      live:"https://rashedujjamannoor.github.io/doctorbari-client/"
     },
     {
       img: "p1.jpg",
-      name: "E-Commers",
+      name: "Doctor Appointment Booking Website",
       description:
-        "Enhance your online shopping experience with our E-Commerce Application UI design project. Seamlessly blending aesthetics with functionality, our intuitive interface offers easy navigation, personalized recommendations, and secure transactions. Elevate your digital storefront and captivate customers with a visually stunning design tailored to your brand",
+        "DoctorBari is a user-friendly online platform designed to simplify the process of booking medical appointments. With a comprehensive database of healthcare professionals, patients can easily search for doctors by specialty, location, and availability. DoctorBari streamlines the booking experience, allowing users to schedule appointments, access patient reviews, and manage their health care needs—all in one convenient place. Prioritize your health and connect with trusted medical experts today!",
 
-      stack: ["React", "Express", "Node", "MongoDB"],
+      stack: ["React"],
     },
     {
       img: "p1.jpg",
@@ -64,7 +65,7 @@ const Projects = () => {
               ))}
             </div>
             <div className="flex justify-start items-center mt-4 gap-3">
-              <a className="btn bg-btncolor">Live</a>
+              <a className="btn bg-btncolor" href={item.live}>Live</a>
               <a className="btn flex justify-center items-center gap-2 border text-btncolor">
                 <FaGithub className="" />
                 <p>Code</p>
