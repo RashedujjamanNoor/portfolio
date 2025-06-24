@@ -30,7 +30,7 @@ const Projects = () => {
         "Estate is a user-friendly real estate website where clients can view detailed property listings with photos, prices, and features. Whether buying, renting, or investing, users can easily browse available properties and send their contact information for inquiries. Estate simplifies the property search process by offering a clean interface and direct connection between clients and agents.",
 
       stack: ["React", "Tailwind"],
-      live: "https://efood-omega-six.vercel.app/shop",
+      live: "https://realstate-app-seven.vercel.app/",
       code: "https://github.com/RashedujjamanNoor/realstate-app",
     },
   ];
