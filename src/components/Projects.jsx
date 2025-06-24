@@ -6,24 +6,33 @@ const Projects = () => {
       img: "doctorbari.png",
       name: "Doctor Appointment Booking Website",
       description:
-      "DoctorBari is a user-friendly online platform designed to simplify the process of booking medical appointments. With a comprehensive database of healthcare professionals, patients can easily search for doctors by specialty, location, and availability. DoctorBari streamlines the booking experience, allowing users to schedule appointments, access patient reviews, and manage their health care needs—all in one convenient place. Prioritize your health and connect with trusted medical experts today!",
+        "DoctorBari is a user-friendly platform that simplifies booking medical appointments. Patients can easily search for doctors by specialty, location, and availability. With access to reviews and scheduling tools, users can manage their healthcare needs in one place. DoctorBari makes it easy to connect with trusted medical professionals and take control of your health conveniently and efficiently.",
 
       stack: ["React", "Tailwind"],
-      live:"https://doctorbari.vercel.app/",
-      code:"https://github.com/RashedujjamanNoor/doctorbari-client"
+      live: "https://doctorbari.vercel.app/",
+      code: "https://github.com/RashedujjamanNoor/doctorbari-client",
     },
     {
       img: "e-Food.png",
       name: "Food Ordering Website",
       description:
-        "Our food ordering website offers a seamless experience with easy add-to-cart functionality and integration with third-party APIs for real-time restaurant data, menus, and order processing.",
+        "Our food ordering website delivers a seamless experience with user-friendly add-to-cart functionality. Integrated with third-party APIs, it provides real-time access to restaurant data, menus, and order processing. Customers can easily browse, select, and order meals online, making the entire process fast, convenient, and efficient for both users and restaurants.",
+
+      stack: ["React", "Tailwind", "Redux"],
+      live: "https://efood-omega-six.vercel.app/shop",
+      code: "https://github.com/RashedujjamanNoor/simple-ecommerce-website",
+    },
+
+    {
+      img: "realestate.png",
+      name: "Real-Estate Website",
+      description:
+        "Estate is a user-friendly real estate website where clients can view detailed property listings with photos, prices, and features. Whether buying, renting, or investing, users can easily browse available properties and send their contact information for inquiries. Estate simplifies the property search process by offering a clean interface and direct connection between clients and agents.",
 
       stack: ["React", "Tailwind"],
-      live:"https://efood-omega-six.vercel.app/shop",
-      code:"https://github.com/RashedujjamanNoor/simple-ecommerce-website"
+      live: "https://efood-omega-six.vercel.app/shop",
+      code: "https://github.com/RashedujjamanNoor/realstate-app",
     },
-    
-    
   ];
   return (
     <div id="projects" className="pt-20">
@@ -54,7 +63,9 @@ const Projects = () => {
               ))}
             </div>
             <div className="flex justify-start items-center mt-4 gap-3">
-              <a className="btn bg-btncolor" href={item.live}>Live</a>
+              <a className="btn bg-btncolor" href={item.live}>
+                Live
+              </a>
               <a className="btn flex justify-center items-center gap-2 border text-btncolor">
                 <FaGithub className="" />
                 <a href={item.code}>Code</a>
