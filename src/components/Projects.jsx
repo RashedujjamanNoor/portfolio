@@ -33,6 +33,17 @@ const Projects = () => {
       live: "https://realstate-app-seven.vercel.app/",
       code: "https://github.com/RashedujjamanNoor/realstate-app",
     },
+
+    {
+      img: "vidlypro.png",
+      name: "Editing Agency Website",
+      description:
+        "VidlyPro is a creative portfolio platform that showcases professional video editing and post-production services. Clients can explore projects across different styles, from cinematic reels to social media edits. With a focus on quality, storytelling, and visual appeal, VidlyPro makes it easy to discover expert editing work and connect with a team passionate about bringing stories to life.",
+
+      stack: ["React", "Tailwind", "Framer Motion"],
+      live: "https://www.vidlypro.com/",
+      code: "",
+    },
   ];
   return (
     <div id="projects" className="pt-20">
@@ -45,7 +56,11 @@ const Projects = () => {
       <div className="grid grid-cols-auto gap-8 justify-center justify-items-center">
         {project.map((item, index) => (
           <div key={index} className="bg-green-950 p-4 rounded-lg">
-            <img src={item.img} alt="" className="w-full rounded-md mb-2" />
+            <img
+              src={item.img}
+              alt=""
+              className="w-full h-48 object-cover rounded-md mb-2"
+            />
             <h1 className="font-medium text-xl mb-4 text-slate-200">
               {item.name}
             </h1>

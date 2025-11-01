@@ -5,7 +5,7 @@ const Header = () => {
     <div className="md:flex justify-center items-center gap-6 2xl:mx-36 ">
       <div className="flex flex-1 justify-center mt-4 md:w-1/2 md:order-2 items-end flex-wrap ">
         <img
-          src="Me.jpeg"
+          src="Noor.png"
           alt=""
           className="min-w-40 min-h-40 max-w-96 max-h-96 bottom-1 right-0 top-1 rounded "
         />
@@ -22,7 +22,12 @@ const Header = () => {
           Web Developer
         </h1>
         <p className="text-justify text-gray-400 font-medium leading-5 ">
-        I’m a software engineer specializing in full-stack development using the MERN stack (MongoDB, Express.js, React, Node.js). I create dynamic web applications with a focus on code quality and user experience. I thrive in collaborative environments and enjoy solving complex problems. Always eager to learn, I also contribute to open-source projects and engage with the developer community.
+          I’m a software engineer specializing in full-stack development using
+          the MERN stack (MongoDB, Express.js, React, Node.js). I create dynamic
+          web applications with a focus on code quality and user experience. I
+          thrive in collaborative environments and enjoy solving complex
+          problems. Always eager to learn, I also contribute to open-source
+          projects and engage with the developer community.
         </p>
         <div className="flex  justify-start items-center gap-4 py-3">
           <button className="btn bg-btncolor">
