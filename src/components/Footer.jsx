@@ -1,81 +1,101 @@
-import { SiCodingninjas } from "react-icons/si";
-import { FaFacebookF } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedinIn, FaFacebookF, FaArrowUp } from "react-icons/fa";
 
-const Footer = () => {
+const socialLinks = [
+  {
+    icon: <FaGithub />,
+    link: "https://github.com/RashedujjamanNoor",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    link: "https://www.linkedin.com/in/md-rashedujjaman-noor-006773262/",
+  },
+  {
+    icon: <FaFacebookF />,
+    link: "https://www.facebook.com/rashedkhan.rk.96",
+  },
+];
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <div className="bg-green-950 p-7 rounded-t-lg mt-8">
-      <div className="flex flex-col  items-center gap-6 sm:grid grid-cols-2 justify-center justify-items-center">
-        <div>
-          <div className="flex justify-center items-center gap-2">
-            <SiCodingninjas className="text-3xl  text-green-600" />
-            <p className="text-3xl font-bold">Portfolio</p>
-          </div>
-          <div className="flex justify-center items-center gap-4 mt-4">
-            <a
-              className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
-              href="https://www.facebook.com/rashedkhan.rk.96"
-            >
-              <FaFacebookF className="text-xl" />
-            </a>
-            <a
-              className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
-              href="https://www.linkedin.com/in/md-rashedujjaman-noor-006773262/"
-            >
-              <FaLinkedinIn className="text-xl" />
-            </a>
-            <a
-              className="bg-white/10 p-3 rounded-full hover:text-green-400 hover:scale-105 transition-all duration-300"
-              href="https://github.com/RashedujjamanNoor?tab=repositories"
-            >
-              <FaGithub className="text-xl" />
-            </a>
-          </div>
-        </div>
-        <div>
-          <h1 className="text-xl text-gray-400 font-medium ">Explore</h1>
-          <div className="flex flex-col gap-2 mt-3 font-medium text-gray-200">
-            <a
-              className="hover:text-green-500 transition-all duration-300"
-              href="#about"
-            >
-              About Me
-            </a>
-            <a
-              className="hover:text-green-500 transition-all duration-300"
-              href="#skills"
-            >
-              Skill
-            </a>
-            <a
-              className="hover:text-green-500 transition-all duration-300"
-              href="#projects"
-            >
-              Projects
-            </a>
-            <a
-              className="hover:text-green-500 transition-all duration-300"
-              href="#education"
-            >
-              Education
-            </a>
-            <a
-              className="hover:text-green-500 transition-all duration-300"
-              href="#contact"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center items-center py-5">
-        <h1 className="text-gray-200 font-medium ">
-          Copyright © All right reserved -| 2024
-        </h1>
-      </div>
-    </div>
-  );
-};
+    <footer className="relative pt-28 pb-8">
+      {/* Gradient Line */}
+      <div className="mx-auto mb-12 h-px max-w-7xl bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
-export default Footer;
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-8 px-6">
+        {/* Logo */}
+        <motion.a
+          href="#home"
+          whileHover={{ scale: 1.05 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl font-bold text-white">
+            Rashedujjaman{" "}
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Noor
+            </span>
+          </h2>
+
+          <p className="mt-2 text-zinc-400">Full Stack MERN Developer</p>
+        </motion.a>
+
+        {/* Navigation */}
+        <nav className="flex flex-wrap justify-center gap-8 text-zinc-400">
+          {["Home", "About", "Skills", "Projects", "Education", "Contact"].map(
+            (item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="transition hover:text-cyan-400"
+              >
+                {item}
+              </a>
+            ),
+          )}
+        </nav>
+
+        {/* Social Icons */}
+        <div className="flex gap-4">
+          {socialLinks.map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                y: -5,
+                scale: 1.1,
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="rounded-full border border-white/10 bg-white/5 p-4 text-xl text-white backdrop-blur-xl transition hover:border-cyan-400 hover:text-cyan-400"
+            >
+              {item.icon}
+            </motion.a>
+          ))}
+        </div>
+
+        {/* Copyright */}
+        <p className="text-center text-sm text-zinc-500">
+          © {year} Rashedujjaman Noor. All Rights Reserved.
+        </p>
+
+        {/* Back To Top */}
+        <motion.a
+          href="#home"
+          animate={{
+            y: [0, 10, 0],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 3,
+          }}
+          className="absolute right-6 top-0 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20"
+        >
+          <FaArrowUp />
+        </motion.a>
+      </div>
+    </footer>
+  );
+}

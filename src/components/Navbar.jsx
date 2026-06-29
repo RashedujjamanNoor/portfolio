@@ -1,66 +1,113 @@
-import { SiCodingninjas } from "react-icons/si";
-import { RiMenu3Line } from "react-icons/ri";
 import { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
-const Navbar = () => {
-  const [menu, setMenu] = useState(false);
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
+  { name: "Contact", href: "#contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="py-4 flex justify-between items-center z-50 flex-wrap px-2 lg:mx-10 border-b-green-600 border-b sticky top-0 mb-1 bg-primary">
-      <div className="flex items-center gap-2">
-        <SiCodingninjas className="text-3xl lg:text-5xl text-green-600" />
-        <p className="text-3xl lg:text-5xl font-bold">Noor.</p>
-      </div>
+    <header className="fixed top-0 left-0 z-50 w-full">
+      <div className="mx-auto max-w-7xl px-5 py-5">
+        <div className="flex items-center justify-between rounded-full border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl">
+          {/* Logo */}
 
-      <div className="hidden md:block">
-        <div className="flex justify-center items-center gap-8 text-gray-400 lg:text-xl font-medium">
-          <a href="#about">About Me</a>
-          <a href="#skills">Skill</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <div className="hidden md:flex justify-center items-center">
-        <button className="bg-btncolor btn lg:py-3 lg:px-6">
-          <a href="#contact">Hire me</a>
-        </button>
-      </div>
+          <a
+            href="#home"
+            className="text-2xl font-bold tracking-wide text-white"
+          >
+            Noor<span className="text-cyan-400">.</span>
+          </a>
 
-      <div className="md:hidden" onClick={() => setMenu(!menu)}>
-        {menu ? (
-          <RxCross2 className="text-green-600 text-3xl " />
-        ) : (
-          <RiMenu3Line className="text-green-600 text-3xl" />
-        )}
-      </div>
-      <div
-        className={`${
-          menu ? "fixed w-full" : "hidden"
-        } md:hidden overflow-hidden z-30 flex flex-col items-center gap-2 pt-3 px-16 bg-green-900 top-[69px] bottom-0 right-0 transition-all duration-500 text-gray-300 font-medium`}
-      >
-        <div className="flex items-center gap-2">
-          <SiCodingninjas className="text-3xl lg:text-5xl text-green-600" />
-          <p className="text-3xl lg:text-5xl font-bold">Noor.</p>
+          {/* Desktop Menu */}
+
+          <nav className="hidden items-center gap-8 md:flex">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="relative text-sm font-medium text-zinc-300 transition hover:text-cyan-400"
+              >
+                {link.name}
+
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-cyan-400 transition-all duration-300 hover:w-full"></span>
+              </a>
+            ))}
+          </nav>
+
+          {/* Resume Button */}
+
+          <a
+            href="cv.pdf"
+            target="_blank"
+            className="hidden rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:scale-105 md:block"
+          >
+            Resume
+          </a>
+
+          {/* Mobile Button */}
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-3xl text-white md:hidden"
+          >
+            {open ? <HiX /> : <HiOutlineMenuAlt3 />}
+          </button>
         </div>
-        <a onClick={() => setMenu(!menu)} href="#about">
-          About Me
-        </a>
-        <a onClick={() => setMenu(!menu)} href="#skills">
-          Skill
-        </a>
-        <a onClick={() => setMenu(!menu)} href="#projects">
-          Projects
-        </a>
-        <a onClick={() => setMenu(!menu)} href="#education">
-          Education
-        </a>
-        <a onClick={() => setMenu(!menu)} href="#contact">
-          Contact
-        </a>
+
+        {/* Mobile Menu */}
+
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
+              transition={{
+                duration: 0.3,
+              }}
+              className="mt-4 rounded-3xl border border-white/10 bg-[#0B1120]/95 p-6 backdrop-blur-xl md:hidden"
+            >
+              <div className="flex flex-col gap-6">
+                {links.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-lg text-zinc-300 transition hover:text-cyan-400"
+                  >
+                    {link.name}
+                  </a>
+                ))}
+
+                <a
+                  href="cv.pdf"
+                  className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 text-center font-semibold text-white"
+                >
+                  Download Resume
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </div>
+    </header>
   );
-};
-
-export default Navbar;
+}

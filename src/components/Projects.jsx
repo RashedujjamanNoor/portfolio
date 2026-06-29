@@ -1,96 +1,209 @@
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FiArrowUpRight, FiGithub, FiExternalLink } from "react-icons/fi";
 
-const Projects = () => {
-  const project = [
-    {
-      img: "doctorbari.png",
-      name: "Doctor Appointment Booking Website",
-      description:
-        "DoctorBari is a user-friendly platform that simplifies booking medical appointments. Patients can easily search for doctors by specialty, location, and availability. With access to reviews and scheduling tools, users can manage their healthcare needs in one place. DoctorBari makes it easy to connect with trusted medical professionals and take control of your health conveniently and efficiently.",
+const projects = [
+  {
+    id: 1,
+    image: "bloom.png",
+    title: "Bloom",
+    subtitle: "Full Stack MERN E-Commerce",
+    featured: true,
+    description:
+      "A modern full-stack e-commerce platform featuring JWT authentication, Redux Toolkit state management, Firebase authentication, product filtering, shopping cart, secure checkout, order management, and a complete admin dashboard. Built with scalability, responsiveness, and performance in mind.",
+    tech: [
+      "React",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "JWT",
+    ],
+    live: "https://bloom-seven-alpha.vercel.app/",
+    github: "https://github.com/RashedujjamanNoor/bloom",
+  },
 
-      stack: ["React", "Tailwind"],
-      live: "https://doctorbari.vercel.app/",
-      code: "https://github.com/RashedujjamanNoor/doctorbari-client",
-    },
-    {
-      img: "e-Food.png",
-      name: "Food Ordering Website",
-      description:
-        "Our food ordering website delivers a seamless experience with user-friendly add-to-cart functionality. Integrated with third-party APIs, it provides real-time access to restaurant data, menus, and order processing. Customers can easily browse, select, and order meals online, making the entire process fast, convenient, and efficient for both users and restaurants.",
+  {
+    id: 2,
+    image: "doctorbari.png",
+    title: "DoctorBari",
+    subtitle: "Healthcare Appointment Platform",
+    description:
+      "A responsive doctor appointment booking platform allowing patients to search doctors by specialty, location, and availability while providing an intuitive scheduling experience.",
+    tech: ["React", "Tailwind CSS"],
+    live: "https://doctorbari.vercel.app/",
+    github: "https://github.com/RashedujjamanNoor/doctorbari-client",
+  },
 
-      stack: ["React", "Tailwind", "Redux"],
-      live: "https://efood-omega-six.vercel.app/shop",
-      code: "https://github.com/RashedujjamanNoor/simple-ecommerce-website",
-    },
+  {
+    id: 3,
+    image: "e-Food.png",
+    title: "E-Food",
+    subtitle: "Food Ordering Platform",
+    description:
+      "A food ordering application powered by third-party APIs with Redux state management, shopping cart functionality, restaurant listings, and responsive UI.",
+    tech: ["React", "Redux", "Tailwind CSS"],
+    live: "https://efood-omega-six.vercel.app/",
+    github: "https://github.com/RashedujjamanNoor/simple-ecommerce-website",
+  },
 
-    {
-      img: "realestate.png",
-      name: "Real-Estate Website",
-      description:
-        "Estate is a user-friendly real estate website where clients can view detailed property listings with photos, prices, and features. Whether buying, renting, or investing, users can easily browse available properties and send their contact information for inquiries. Estate simplifies the property search process by offering a clean interface and direct connection between clients and agents.",
+  {
+    id: 4,
+    image: "realestate.png",
+    title: "Estate",
+    subtitle: "Real Estate Platform",
+    description:
+      "A responsive property listing website allowing users to browse homes, apartments, and commercial properties while connecting buyers with agents.",
+    tech: ["React", "Tailwind CSS"],
+    live: "https://realstate-app-seven.vercel.app/",
+    github: "https://github.com/RashedujjamanNoor/realstate-app",
+  },
 
-      stack: ["React", "Tailwind"],
-      live: "https://realstate-app-seven.vercel.app/",
-      code: "https://github.com/RashedujjamanNoor/realstate-app",
-    },
+  {
+    id: 5,
+    image: "vidlypro.png",
+    title: "VidlyPro",
+    subtitle: "Creative Editing Agency",
+    description:
+      "A modern agency website showcasing professional video editing services with engaging animations, clean layouts, and an immersive user experience.",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    live: "https://www.vidlypro.com/",
+    github: "https://github.com/RashedujjamanNoor/agv",
+  },
+];
 
-    {
-      img: "vidlypro.png",
-      name: "Editing Agency Website",
-      description:
-        "VidlyPro is a creative portfolio platform that showcases professional video editing and post-production services. Clients can explore projects across different styles, from cinematic reels to social media edits. With a focus on quality, storytelling, and visual appeal, VidlyPro makes it easy to discover expert editing work and connect with a team passionate about bringing stories to life.",
-
-      stack: ["React", "Tailwind", "Framer Motion"],
-      live: "https://www.vidlypro.com/",
-      code: "",
-    },
-  ];
+export default function Project() {
   return (
-    <div id="projects" className="pt-20">
-      <h1 className="text-center mb-5 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200 ">
-          Projects
-        </span>
-      </h1>
-      <hr className="mb-6 border-green-600" />
-      <div className="grid grid-cols-auto gap-8 justify-center justify-items-center">
-        {project.map((item, index) => (
-          <div key={index} className="bg-green-950 p-4 rounded-lg">
-            <img
-              src={item.img}
-              alt=""
-              className="w-full h-48 object-cover rounded-md mb-2"
-            />
-            <h1 className="font-medium text-xl mb-4 text-slate-200">
-              {item.name}
-            </h1>
-            <p className="text-sm font-medium text-slate-400 text-justify">
-              {item.description}
-            </p>
-            <div className="flex justify-start items-center gap-3 my-6">
-              {item.stack.map((stack, index) => (
-                <p
-                  className="border border-green-400 px-2 py-1 rounded-full text-green-200 font-bold"
-                  key={index}
-                >
-                  {stack}
-                </p>
-              ))}
-            </div>
-            <div className="flex justify-start items-center mt-4 gap-3">
-              <a className="btn bg-btncolor" href={item.live}>
-                Live
-              </a>
-              <a className="btn flex justify-center items-center gap-2 border text-btncolor">
-                <FaGithub className="" />
-                <a href={item.code}>Code</a>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+    <section id="projects" className="relative overflow-hidden  py-28">
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Heading */}
 
-export default Projects;
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-24 text-center"
+        >
+          <p className="mb-4 uppercase tracking-[6px] text-cyan-400">
+            Selected Work
+          </p>
+
+          <h2 className="text-4xl font-bold text-white md:text-6xl">
+            Featured Projects
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
+            A collection of projects focused on beautiful interfaces,
+            performance, scalability, and user experience.
+          </p>
+        </motion.div>
+
+        {/* Projects */}
+
+        <div className="space-y-32">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className={`grid items-center gap-12 lg:grid-cols-2 ${
+                index % 2 && "lg:[&>*:first-child]:order-2"
+              }`}
+            >
+              {/* IMAGE */}
+
+              <motion.div
+                whileHover={{
+                  scale: 1.03,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+
+                <div className="absolute bottom-6 left-6 flex items-center gap-2 text-white opacity-0 transition duration-500 group-hover:opacity-100">
+                  <FiExternalLink />
+                  View Project
+                </div>
+              </motion.div>
+
+              {/* CONTENT */}
+
+              <div>
+                <p className="mb-3 text-cyan-400">{project.subtitle}</p>
+
+                <h3 className="mb-6 text-4xl font-bold text-white">
+                  {project.title}
+                </h3>
+
+                <p className="mb-8 leading-8 text-zinc-400">
+                  {project.description}
+                </p>
+
+                {/* TECH */}
+
+                <div className="mb-8 flex flex-wrap gap-3">
+                  {project.tech.map((item) => (
+                    <motion.span
+                      whileHover={{
+                        scale: 1.08,
+                      }}
+                      key={item}
+                      className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm text-cyan-300"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* BUTTONS */}
+
+                <div className="flex flex-wrap gap-4">
+                  <motion.a
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    href={project.live}
+                    className="flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 font-semibold text-black"
+                  >
+                    Live Demo
+                    <FiArrowUpRight />
+                  </motion.a>
+
+                  <motion.a
+                    whileHover={{
+                      scale: 1.05,
+                    }}
+                    href={project.github}
+                    className="flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-white"
+                  >
+                    <FiGithub />
+                    Github
+                  </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

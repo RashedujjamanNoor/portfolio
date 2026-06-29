@@ -1,68 +1,104 @@
-import { TbBrandRedux } from "react-icons/tb";
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaReact } from "react-icons/fa6";
-import { FaNodeJs } from "react-icons/fa6";
-import { SiExpress } from "react-icons/si";
-import { SiMongodb } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+} from "react-icons/fa";
 
-const MySkills = () => {
+import {
+  SiTailwindcss,
+  SiRedux,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiFramer,
+} from "react-icons/si";
+
+import { FaCode } from "react-icons/fa";
+
+const skills = [
+  { name: "HTML5", icon: <FaHtml5 />, color: "text-orange-500" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "text-blue-500" },
+  { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" },
+  { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "text-cyan-400" },
+  { name: "React", icon: <FaReact />, color: "text-cyan-500" },
+  { name: "Redux Toolkit", icon: <SiRedux />, color: "text-violet-500" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
+  { name: "Express.js", icon: <SiExpress />, color: "text-gray-300" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
+  { name: "Firebase", icon: <SiFirebase />, color: "text-amber-400" },
+  { name: "GitHub", icon: <FaGithub />, color: "text-white" },
+  { name: "Framer Motion", icon: <SiFramer />, color: "text-pink-400" },
+  {
+    name: "GSAP",
+    icon: <FaCode />,
+    color: "text-lime-400",
+  },
+];
+
+export default function MySkills() {
   return (
-    <div id="skills" className="pt-20">
-      <h1 className="text-center mb-7 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200">
-          My Skills
-        </span>
-      </h1>
-      <div className="border border-green-600 p-4 rounded-lg">
-        <ul className="flex flex-wrap justify-center items-center gap-4">
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500 bg-green-950 px-2 rounded-full py-1">
-            <FaHtml5 />
-            <p>HTML5</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <FaCss3Alt />
-            <p>Css3</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <SiJavascript />
-            <p>Javascript</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <RiTailwindCssFill />
-            <p>TailwindCss</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <FaReact />
-            <p>React</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <TbBrandRedux />
-            <p>Redux Toolkit</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <FaNodeJs />
-            <p>Node</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <SiExpress />
-            <p>Exprees</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <SiMongodb />
-            <p>MondoDB</p>
-          </li>
-          <li className="flex justify-center items-center gap-2 font-bold text-lg md:text-xl text-green-500  bg-green-950 px-2 rounded-full py-1">
-            <FaGithub />
-            <p>Github</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
-};
+    <section id="skills" className="relative overflow-hidden  py-28">
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <p className="mb-3 uppercase tracking-[6px] text-cyan-400">
+            My Expertise
+          </p>
 
-export default MySkills;
+          <h2 className="text-4xl font-bold text-white md:text-6xl">
+            Skills & Technologies
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
+            Technologies I use to build fast, scalable, and visually engaging
+            web applications.
+          </p>
+        </motion.div>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.05,
+                duration: 0.45,
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+              }}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/40"
+            >
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/5 to-violet-500/10 opacity-0 transition group-hover:opacity-100" />
+
+              <div
+                className={`relative mb-4 flex justify-center text-5xl ${skill.color}`}
+              >
+                {skill.icon}
+              </div>
+
+              <h3 className="relative text-center font-medium text-white">
+                {skill.name}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

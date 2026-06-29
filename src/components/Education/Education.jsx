@@ -1,111 +1,135 @@
-import "./Education.css";
+import { motion } from "framer-motion";
+import { FiCalendar } from "react-icons/fi";
+import { FaGraduationCap } from "react-icons/fa";
 
-const Education = () => {
+const education = [
+  {
+    degree: "Bachelor of Science in Computer Science & Engineering",
+    institute:
+      "Bangladesh Army University of Science and Technology (BAUST), Saidpur",
+    duration: "2019 - 2024",
+    description:
+      "Focused on software engineering, algorithms, database systems, web development, and modern application architecture. Alongside academics, I actively build full-stack MERN projects and continuously explore new technologies.",
+  },
+
+  {
+    degree: "Higher Secondary Certificate (HSC)",
+    institute: "Dinajpur Adarsha College",
+    duration: "2017 - 2019",
+    description:
+      "Completed higher secondary education with a science background while developing a strong interest in programming and software development.",
+  },
+];
+
+export default function Education() {
   return (
-    <div id="education" className="pt-20 mx-2">
-      <h1 className="text-center mb-7 text-2xl font-bold   md:text-3xl lg:text-4xl 2xl:text-5xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-200">
-          <span className="border-b border-green-500">Educa</span>tion
-        </span>
-      </h1>
+    <section id="education" className="relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Heading */}
 
-      <div className="max-w-7xl mx-auto w-full md:grid grid-cols-9 hidden font-medium text-gray-200">
-        {/* Timeline 1 */}
-        <div className="col-span-4 w-full h-full">
-          <div className="w-full h-full bg-green-950 rounded-md p-3">
-            <div className="flex justify-between items-center text-wrap gap-2 mb-3">
-              <h1 className="w-4/5">
-                Bangladesh Army University of Science and Technology (BAUST),
-                Saidpur
-              </h1>
-              <h1>2019-2024</h1>
-            </div>
-            <p className="text-sm ">B.Sc in Computer Science and Engineering</p>
-          </div>
-        </div>
-        <div className="col-span-1 w-full h-full flex justify-center items-center relative">
-          <div className="h-full w-1 bg-green-500 "></div>
-
-          <div className="w-6 h-6 rounded-full bg-green-500 absolute text-green-950 text-center font-medium">
-            1
-          </div>
-        </div>
-        <div className="w-full h-full col-span-4"></div>
-
-        {/* Timeline 2 */}
-        <div className="w-full h-full col-span-4"></div>
-        <div className="col-span-1 w-full h-full flex justify-center items-center relative">
-          <div className="h-full w-1 bg-green-500 "></div>
-
-          <div className="w-6 h-6 rounded-full bg-green-500 absolute text-green-950 text-center font-medium">
-            2
-          </div>
-        </div>
-        <div className="col-span-4 w-full h-full">
-          <div className="w-full h-full bg-green-950 rounded-md p-3">
-            <div className="flex justify-between items-center text-wrap gap-2 mb-3">
-              <h1 className="w-4/5">
-              Adarsha College, Dinajpur
-              </h1>
-              <h1>2017-2019</h1>
-            </div>
-            <p className="text-sm">HSC</p>
-          </div>
-        </div>
-
-        {/* Timeline 3 */}
-        <div className="col-span-4 w-full h-full">
-          <div className="w-full h-full bg-green-950 rounded-md p-3">
-            <div className="flex justify-between items-center text-wrap gap-2 mb-3">
-              <h1 className="w-4/5">
-              Collectorate Public School and College, Nilphamari
-              </h1>
-              <h1>2015-2017</h1>
-            </div>
-            <p className="text-sm">SSC</p>
-          </div>
-        </div>
-        <div className="col-span-1 w-full h-full flex justify-center items-center relative">
-          <div className="h-full w-1 bg-green-500 "></div>
-
-          <div className="w-6 h-6 rounded-full bg-green-500 absolute text-green-950 text-center font-medium">
-            3
-          </div>
-        </div>
-        <div className="w-full h-full col-span-4"></div>
-      </div>
-      <div className="flex flex-col gap-3 md:hidden">
-        <div className="bg-green-950 p-3 rounded-md text-gray-200">
-          <div className="flex justify-between items-center  mb-3">
-            <h1 className="w-4/6 font-medium  ">
-              Bangladesh Army University of Science and Technology (BAUST),
-              Saidpur
-            </h1>
-            <h1 className="font-medium">2019 - 2024</h1>
-          </div>
-          <p className="text-sm font-medium">
-            B.Sc in Computer Science and Engineering
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
+        >
+          <p className="mb-3 uppercase tracking-[6px] text-cyan-400">
+            Education
           </p>
-        </div>
-        <div className="bg-green-950 p-3 rounded-md text-gray-200">
-          <div className="flex justify-between items-center  mb-3">
-            <h1 className="w-4/6 font-medium  ">Adarsha College, Dinajpur</h1>
-            <h1 className="font-medium">2017 - 2019</h1>
-          </div>
-          <p className="text-sm font-medium">HSC</p>
-        </div>
-        <div className="bg-green-950 p-3 rounded-md text-gray-200">
-          <div className="flex justify-between items-center  mb-3">
-            <h1 className="w-4/6 font-medium  ">
-              Collectorate Public School and College, Nilphamari
-            </h1>
-            <h1 className="font-medium">2015 - 2017</h1>
-          </div>
-          <p className="text-sm font-medium">SSC</p>
+
+          <h2 className="text-4xl font-bold text-white md:text-6xl">
+            Academic Journey
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-zinc-400">
+            My educational background and continuous learning journey in
+            software development.
+          </p>
+        </motion.div>
+
+        {/* Timeline */}
+
+        <div className="relative mx-auto max-w-4xl">
+          {/* Vertical Line */}
+
+          <div
+            className="
+    absolute
+    left-5
+    top-0
+    h-full
+    w-[3px]
+    rounded-full
+    bg-[linear-gradient(to_bottom,#22d3ee,#3b82f6,#8b5cf6,#22d3ee)]
+    bg-[length:100%_250%]
+    animate-[gradient_6s_linear_infinite]
+    md:left-1/2
+    md:-translate-x-1/2
+  "
+          />
+
+          {education.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 60,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.15,
+              }}
+              className={`relative mb-14 flex ${
+                index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+              }`}
+            >
+              {/* Dot */}
+
+              <div className="absolute left-5 top-8 z-10 h-5 w-5 rounded-full border-4 border-[#050816] bg-cyan-400 md:left-1/2 md:-translate-x-1/2"></div>
+
+              {/* Card */}
+
+              <div className="ml-14 w-full md:ml-0 md:w-[45%]">
+                <motion.div
+                  animate={{
+                    y: [0, 10, 0],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                  }}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all"
+                >
+                  <div className="mb-5 flex items-center gap-3">
+                    <div className="rounded-xl bg-cyan-500/10 p-3 text-cyan-400">
+                      <FaGraduationCap />
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-white">
+                        {item.degree}
+                      </h3>
+
+                      <p className="text-cyan-400">{item.institute}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-5 flex items-center gap-2 text-zinc-400">
+                    <FiCalendar />
+                    {item.duration}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Education;
+}

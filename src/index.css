@@ -22,3 +22,17 @@ body {
 ::-webkit-scrollbar-thumb {
   @apply bg-green-600 rounded-full;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 0% 250%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
